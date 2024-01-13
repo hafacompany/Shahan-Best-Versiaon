@@ -1,0 +1,10 @@
+#!/bin/bash
+sudo killall -u $1
+sudo userdel -r $1
+
+
+
+FILE=/etc/ocserv/ocpasswd
+if test -f "$FILE"; then
+    sudo ocpasswd -c /etc/ocserv/ocpasswd -d $1
+fi

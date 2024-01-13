@@ -1,0 +1,12 @@
+<FilesMatch "\.(gif|jpeg|png|ico|css|js|swf|png|svg|woff)$">
+
+  <IfModule mod_headers.c>
+    Header set Cache-Control "max-age=172800, public, must-revalidate"
+  </IfModule>
+
+</FilesMatch>
+
+<Files ~ "\.txt$">
+    Order allow,deny
+    Deny from all
+</Files>

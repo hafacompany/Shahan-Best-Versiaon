@@ -1,0 +1,13 @@
+#!/bin/bash
+#By Hamed Ap
+sudo killall -u $1
+sudo passwd $1 <<!
+$2
+$2
+!
+
+
+FILE=/etc/ocserv/ocpasswd
+if test -f "$FILE"; then
+    sudo ocpasswd -c /etc/ocserv/ocpasswd $1 <<< "$2"
+fi
